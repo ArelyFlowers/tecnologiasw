@@ -7,7 +7,7 @@
 </head>
 <body>
     <h2>Ejercicio 1</h2>
-    <p>Escribir programa para comprobar si un número es un múltiplo de 5 y 7</p>
+    <p>Programa para comprobar si un número es un múltiplo de 5 y 7</p>
     <?php
         if(isset($_GET['numero']))
         {
@@ -24,7 +24,7 @@
     ?>
 
     <h2>Ejemplo de POST</h2>
-    <form action="http://localhost/tecnologiasw/practicas/p04/funcionesdephp/index.php" method="post">
+    <form action="http://localhost/tecnologiasw/practicas/p04/index.php" method="post">
         Name: <input type="text" name="name"><br>
         E-mail: <input type="text" name="email"><br>
         <input type="submit">
