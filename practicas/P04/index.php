@@ -38,5 +38,38 @@
             echo $_POST["email"];
         }
     ?>
+
+           <h2>Ejercicio 2</h2> 
+           <p>Crea un programa para la generación repetitiva de 3 números aleatorios hasta obtener una
+           secuencia compuesta por: impar, par, impar</p>
+
+        <?php
+            function generarNumAleatorio() {
+            return rand(1, 100);}
+    
+            $matriz = [];
+            $iteraciones = 0;
+            $numerosGen = 0;
+    
+            while (true) {
+            $iteraciones++;
+        
+             $fila = [];
+             for ($i = 0; $i < 3; $i++) {
+            $numero = generarNumAleatorio();
+            $fila[] = $numero;
+            $numerosGen++;}
+    
+            if ($fila[0] % 2 == 1 && $fila[1] % 2 == 0 && $fila[2] % 2 == 1) {
+            $matriz[] = $fila;
+            break;}
+            $matriz[] = $fila;}
+    
+            foreach ($matriz as $fila) {
+            echo implode(',', $fila)."<br>";}
+    
+           echo "$numerosGen números obtenidos en $iteraciones iteraciones."; 
+        ?>
+
 </body>
 </html>
