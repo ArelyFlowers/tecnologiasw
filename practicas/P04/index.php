@@ -96,5 +96,32 @@
               echo "El primer número entero aleatorio múltiplo de $numerodado es: $resultado";
             }
 ?>
+        <h2>Ejercicio 4</h2> 
+           <p>Crear un arreglo cuyos índices van de 97 a 122 y cuyos valores son las letras de la 'a'
+            a la 'z'. Usa la función chr(n) que devuelve el caracter cuyo código ASCII es n para poner
+            el valor en cada índice.</p>
+           <p>-Crea el arreglo con un ciclo for.</p>
+           <p>-Lee el arreglo y crea una tabla en XHTML con echo y un ciclo foreach.</p>
+
+        <?php
+            // Arreglo con un ciclo for
+            $arreglo = array();
+            for ($n = 97; $n <= 122; $n++) {
+             $arreglo[$n] = chr($n);
+            }
+
+            // Tabla XHTML con un ciclo foreach
+            echo '<table border="1">';
+            echo '<tr><th>Índice</th><th>Valor</th></tr>';
+
+            foreach ($arreglo as $key => $value) {
+             echo '<tr>';
+             echo '<td>'.$key.'</td>';
+             echo '<td>'.$value.'</td>';
+             echo '</tr>';
+            }   
+            echo '</table>';
+        ?>
+
 </body>
 </html>
