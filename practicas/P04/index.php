@@ -6,7 +6,7 @@
     <title>Práctica 4</title>
 </head>
 <body>
-    <h2>Ejercicio 1</h2>
+     <h2>Ejercicio 1</h2>
     <p>Programa para comprobar si un número es un múltiplo de 5 y 7</p>
     <?php
         if(isset($_GET['numero']))
@@ -69,7 +69,32 @@
             echo implode(',', $fila)."<br>";}
     
            echo "$numerosGen números obtenidos en $iteraciones iteraciones."; 
-        ?>
+        ?> 
 
+<h2>Ejercicio 3</h2> 
+           <p>Utiliza un ciclo while para encontrar el primer número entero obtenido aleatoriamente,
+           pero que además sea múltiplo de un número dado.</p>
+           <p>-Crear una variante de este script utilizando el ciclo do-while.</p>
+           <p>-El número dado se debe obtener vía GET.</p>
+
+           <?php
+            $numerodado = isset($_GET['numero']) ? intval($_GET['numero']) : 0;
+
+            if ($numerodado <= 0) {
+            echo "Proporciona un numero entero.";
+            } 
+            else {
+            $resultado = 0;
+            do {
+                $numAleatorio = rand(1, 200); 
+              if ($numAleatorio % $numerodado == 0) {
+                 $resultado = $numAleatorio;
+             break;}
+            } 
+            while (true);
+
+              echo "El primer número entero aleatorio múltiplo de $numerodado es: $resultado";
+            }
+?>
 </body>
 </html>
