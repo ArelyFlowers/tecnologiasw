@@ -123,5 +123,48 @@
             echo '</table>';
         ?>
 
+<h2>Ejercicio 5 </h2> 
+           <p>Usar las variables $edad y $sexo en una instrucción if para identificar una persona de
+           sexo “femenino”, cuya edad oscile entre los 18 y 35 años y mostrar un mensaje de
+            bienvenida apropiado. Por ejemplo: "Bienvenida, usted está en el rango de edad permitido".</p>
+            
+
+        <form action="http://localhost/tecnologiasw/practicas/p04/index.php" method="post">
+        Edad: <input type="number" name="edad" required><br>
+        Sexo: <input type="radio" name="sexo" value="femenino" required> Femenino
+        <input type="radio" name="sexo" value="masculino" required> Masculino<br><br>
+        <input type="submit" >
+        </form>
+
+    <?php
+        if (isset($_POST["edad"]) && isset($_POST["sexo"]))  {
+        $edad = $_POST['edad'];
+        $sexo = $_POST['sexo'];
+
+        if ($sexo == "femenino" && $edad >= 18 && $edad <= 35)
+        {
+            echo "Edad: ";
+            echo $_POST["edad"];  
+            echo '<br>';
+            echo "Sexo: ";
+            echo $_POST["sexo"];
+            echo '<br>';
+            echo "Bienvenida, usted está en el rango de edad y sexo permitido.";
+        } else {
+            echo "Edad: ";
+            echo $_POST["edad"];  
+            echo '<br>';
+            echo "Sexo: ";
+            echo $_POST["sexo"];
+            echo '<br>';
+            echo "Lo sentimos, usted no cumple con la edad y sexo permitido.";
+        }
+        }
+        else {
+        echo "Por favor, complete el formulario.";
+    }
+?>
+
+
 </body>
 </html>
