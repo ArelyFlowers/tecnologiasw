@@ -363,13 +363,13 @@ function mostrarinfoVehicular($infoVehicular) {
 
 <h1>Consulta de Vehículos</h1>
     
-    <form action="http://localhost/tecnologiasw/practicas/p04/ejercicio5.php" method="post">
+    <form action="http://localhost/tecnologiasw/practicas/p04/index.php" method="post">
         <label for="matricula">1. Consultar por matrícula:</label>
         <input type="text" name="matricula" id="matricula" required>
         <input type="submit" value="Consultar">
     </form>
 
-    <form action="http://localhost/tecnologiasw/practicas/p04/ejercicio5.php" method="post">
+    <form action="http://localhost/tecnologiasw/practicas/p04/index.php" method="post">
         <label for="todos">2. Mostrar todos los autos registrados:</label>
         <input type="hidden" name="todos" value="true">
         <input type="submit" value="Mostrar Todos">
@@ -416,7 +416,10 @@ if (isset($_POST['matricula'])) {
 } else {
     echo '<p>No se ha realizado ninguna consulta.</p>';
 }
+
 ?>
+
+<h1>Práctica finalizada</h1>
 
 
 </body>
